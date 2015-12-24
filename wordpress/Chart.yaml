@@ -1,0 +1,8 @@
+name: wordpress
+home: https://wordpress.org/
+version: 0.1.0
+description: Persistant Wordpress setup that utilizes a MySQL database.
+maintainers:
+  - Rimas Mocevicius <rmocius@gmail.com>
+details:
+  This package provides a basic Wordpress replication controller that connects to a MySQL database replication controller.
