@@ -10,7 +10,17 @@ $ helm up
 $ helm repo add kube-charts https://github.com/TheNewNormal/kube-charts
 $ helm up
 ```
-- Install e.g. Wordpress chart:
+
+- Install charts:
+
+ Install [Deis v2 Lite](https://github.com/deis/deis) chart:
+```
+$ helm fetch kube-charts/deis
+$ helm install deis
+$ kubectl get pods  # to check pods
+```
+
+ Install Wordpress chart:
 ```
 $ helm fetch kube-charts/wordpress
 $ helm install wordpress
