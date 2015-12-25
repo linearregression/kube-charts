@@ -23,6 +23,8 @@ spec:
               value: "1"
             - name: ETCD_NAME
               value: deis1
+            - name: ETCD_DATA_DIR
+              value: "/var/lib/etcd2"
             - name: POD_NAMESPACE
               valueFrom:
                 fieldRef:

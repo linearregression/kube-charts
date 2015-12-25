@@ -31,8 +31,8 @@ spec:
             - name: minio-user
               mountPath: /var/run/secrets/deis/minio/user
               readOnly: true
-            - name: home-minio
-              mountPath: /home/minio
+#            - name: home-minio
+#              mountPath: /home/minio
       volumes:
         - name: minio-admin
           secret:
@@ -40,6 +40,6 @@ spec:
         - name: minio-user
           secret:
             secretName: minio-user
-        - name: home-minio
-          hostPath:
-            path: /data/deis/minio
+#        - name: home-minio
+#          hostPath:
+#            path: /data/deis/minio
