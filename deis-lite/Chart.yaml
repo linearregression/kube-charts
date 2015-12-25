@@ -10,3 +10,6 @@ details: |-
   Deis (pronounced DAY-iss) is an open source PaaS that makes it easy to deploy
   and manage applications on your own servers. Deis builds on Kubernetes
   to provide a lightweight, Heroku-inspired workflow.
+
+  To install the latest `deis` client dev build for OS X or Linux:
+  $ curl -sSL http://deis.io/deis-cli/install-v2-alpha.sh | bash
