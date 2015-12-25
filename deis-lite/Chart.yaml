@@ -5,8 +5,8 @@ description: For testing only!
 maintainers:
 - Rimas Mocevicius <rimas@deis.com>
 details: |-
-  Deis-Lite is one node setup made to run on Kube-Solo App, it has a persistent setup.
-  
+  Deis-Lite is Kubernetes one node setup, with a persistent setup via host folders.
+
   Deis (pronounced DAY-iss) is an open source PaaS that makes it easy to deploy
   and manage applications on your own servers. Deis builds on Kubernetes
   to provide a lightweight, Heroku-inspired workflow.
