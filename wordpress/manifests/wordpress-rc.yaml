@@ -3,31 +3,29 @@ kind: ReplicationController
 metadata:
   name: wordpress
   labels:
-    app: wordpress
+    name: wordpress
     heritage: helm
 spec:
   replicas: 1
+  selector:
+    name: wordpress
   template:
     metadata:
       labels:
-        app: docker-registry
+        name: wordpress
     spec:
       containers:
         - name: wordpress
           image: wordpress
           env:
             - name: WORDPRESS_DB_PASSWORD
-              # change this - must match mysql.yaml password
               value: test123
           ports:
-            - containerPort: 80
-              name: wordpress
+          - containerPort: 80
           volumeMounts:
-            # name must match the volume name below
             - name: var-www-html
-            # mount path within the container
-            mountPath: /var/www/html
+              mountPath: /var/www/html
       volumes:
-        - name: war-www-html
+        - name: var-www-html
           hostPath:
             path: /data/wordpress

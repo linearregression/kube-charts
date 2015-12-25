@@ -10,7 +10,7 @@ $ helm up
 $ helm repo add kube-charts https://github.com/TheNewNormal/kube-charts
 $ helm up
 ```
-- Install Wordpress chart
+- Install e.g. Wordpress chart:
 ```
 $ helm fetch kube-charts/wordpress
 $ helm install wordpress

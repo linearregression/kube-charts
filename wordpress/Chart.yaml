@@ -1,7 +1,7 @@
 name: wordpress
 home: https://wordpress.org/
 version: 0.1.0
-description: Persistant Wordpress setup that utilizes a MySQL database.
+description: Persistent Wordpress setup that utilizes a MySQL database.
 maintainers:
   - Rimas Mocevicius <rmocius@gmail.com>
 details:
