@@ -1,39 +1,37 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: postgres
+  name: pg-odoo
+  labels:
+    name: pg-odoo
+    heritage: helm
 spec:
   replicas: 1
   selector:
-    app: postgres
-    role: backend
+    name: pg-odoo
   template:
     metadata:
       labels:
-        app: postgres
-        role: backend
+        name: pg-odoo
     spec:
       containers:
-      - name: postgres
-        image: postgres
-        env:
-          - name: POSTGRES_USER
-            value: "odoo"
-          - name: POSTGRES_PASSWORD
-            value: "test123"
-        ports:
-        - containerPort: 5432
-        # Mount volume/s into pod
-        volumeMounts:
-          # must match the name of the volume name below
-          - name: lib-postgresql
-            mountPath: /var/lib/postgresql
-          - name: log-postgresql
-            mountPath: /var/log/postgresql
-      # volumes to be mounted to containers
+        - name: postgres
+          image: postgres
+          env:
+            - name: POSTGRES_USER
+              value: "odoo"
+            - name: POSTGRES_PASSWORD
+              value: "test123"
+          ports:
+          - containerPort: 5432
+          volumeMounts:
+            - name: lib-postgresql
+              mountPath: /var/lib/postgresql
+            - name: log-postgresql
+              mountPath: /var/log/postgresql
       volumes:
-      - name: lib-postgresql
+        - name: lib-postgresql
           hostPath:
             path: /data/odoo/postgresql
-      - name: log-postgresql
-        emptyDir: {}
+        - name: log-postgresql
+          emptyDir: {}
