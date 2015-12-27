@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: odoo
+  name: odoo
+spec:
+  ports:
+  # the port that this service should serve on
+  - port: 8069
+    targetPort: 8069
+  # Label keys and values that must match in order to receive traffic for this service.
+  selector:
+    app: odoo
+    role: frontend

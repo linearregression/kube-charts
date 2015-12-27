@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: odoo
+spec:
+  replicas: 1
+  selector:
+    app: odoo
+    role: frontend
+  template:
+    metadata:
+      labels:
+        app: odoo
+        role: frontend
+    spec:
+      containers:
+      - name: odoo
+        image: odoo:9
+        env:
+          - name: DB_ENV_POSTGRES_USER
+            value: "odoo"
+          - name: DB_ENV_POSTGRES_PASSWORD
+            value: "test123"
+        ports:
+        - containerPort: 8069
+          hostPort: 8069
+        # Mount volume/s into pod
+        volumeMounts:
+          # must match the name of the volume name below
+          - name: custom-addons
+            # mount path within the container
+            mountPath: /mnt/extra-addons
+          - name: var-lib-odoo
+            mountPath: /var/lib/odoo
+      # volumes to be mounted to containers
+      volumes:
+      - name: custom-addons
+          hostPath:
+            path: /data/odoo/extra-addons
+      - name: var-lib-odoo
+          hostPath:
+            path: /data/odoo/var-lib-odoo

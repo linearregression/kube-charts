@@ -1,0 +1,9 @@
+name: odoo
+home: https://www.odoo.com
+version: 0.1.0
+description: Odoo - Open Source ERP & CRM
+maintainers:
+  - Rimas Mocevicius <rmocius@gmail.com>
+details:
+  This package provides Odoo setup with persistent data, which will survive Kubernetes cluster
+  stop and reboot
