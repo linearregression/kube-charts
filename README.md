@@ -15,9 +15,9 @@ $ helm up
 
 Install [Deis v2 Lite](https://github.com/deis/deis) chart:
 ```
-$ helm fetch kube-charts/deis
-$ helm install deis
-$ kubectl get pods  # to check pods
+$ helm fetch kube-charts/deis-lite
+$ helm install deis-lite
+$ kubectl --namespace=deis get pods  # to check pods
 ```
 
 Install Wordpress chart:
@@ -26,3 +26,4 @@ $ helm fetch kube-charts/wordpress
 $ helm install wordpress
 $ kubectl get pods  # to check pods
 ```
+
