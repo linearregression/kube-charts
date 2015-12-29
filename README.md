@@ -3,7 +3,7 @@
 
 This repository contains [Helm](https://github.com/helm/helm) Charts for [Kube-solo](https://github.com/TheNewNormal/kube-solo-osx) and [Kube-Cluster](https://github.com/TheNewNormal/kube-cluster-osx) Apps.
 
-###First install [Kube-Solo]() App
+####First install [Kube-Solo](https://github.com/TheNewNormal/kube-solo-osx) App
 #####Then, add this Chart repo to Helm:
 ```console
 $ helm up
