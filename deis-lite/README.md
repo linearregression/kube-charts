@@ -2,8 +2,8 @@
 
 Deis-Lite is Kubernetes one node setup, it has a persistent setup via host folders.
 
-* Tested on:
-Kube-solo App: https://github.com/TheNewNormal/kube-solo-osx
+#### Currently works on:
+- Kube-solo App - https://github.com/TheNewNormal/kube-solo-osx, where you can install it with just simple console command `$ install_deis`
 
 Instructions for installing a Deis cluster:
 https://github.com/deis/charts
