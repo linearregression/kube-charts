@@ -1,16 +1,14 @@
-# Deis-Lite v2.0.0-pre-alpha
+# Deis-Lite v2.0.0-alpha
 
 Deis-Lite is Kubernetes one node setup, it has a persistent setup via host folders.
 
 * Tested on:
 Kube-solo App: https://github.com/TheNewNormal/kube-solo-osx
 
-To install the latest `deis` client dev build for OS X or Linux:
-```
-$ curl -sSL http://deis.io/deis-cli/install-v2-alpha.sh | bash
-```
+Instructions for installing a Deis cluster:
+https://github.com/deis/charts
 
-Complete instructions for installing and managing a Deis cluster are available in the docs folder:
+Complete instructions for installing and managing a Deis cluster:
 https://github.com/deis/workflow/tree/master/docs/src
 
 
