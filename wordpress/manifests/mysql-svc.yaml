@@ -3,10 +3,9 @@ kind: Service
 metadata:
   name: mysql
   labels:
-    name: mysql
     heritage: helm
 spec:
   ports:
     - port: 3306
   selector:
-    name: mysql
+    provider: mysql

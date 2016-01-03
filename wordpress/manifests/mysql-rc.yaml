@@ -3,16 +3,15 @@ kind: ReplicationController
 metadata:
   name: mysql
   labels:
-    name: mysql
     heritage: helm
 spec:
   replicas: 1
   selector:
-    name: mysql
+    provider: mysql
   template:
     metadata:
       labels:
-        name: mysql
+        provider: mysql
     spec:
       containers:
         - name: mysql
