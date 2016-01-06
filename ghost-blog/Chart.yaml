@@ -1,0 +1,8 @@
+name: ghost-blog
+home: https://ghost.org
+version: 0.1.0
+description: Ghost blog
+maintainers:
+- Your Name <rimas@deis.com>
+details: |-
+    Ghost is a free and open source blogging platform written in JavaScript
