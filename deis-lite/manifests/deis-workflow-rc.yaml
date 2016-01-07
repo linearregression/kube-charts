@@ -26,8 +26,6 @@ spec:
           ports:
             - containerPort: 8000
               name: http
-              # expose port to node to make workflow to be accessable from host
-              hostPort: 8000
           volumeMounts:
             - mountPath: /var/run/docker.sock
               name: docker-socket
