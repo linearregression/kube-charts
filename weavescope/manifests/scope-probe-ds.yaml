@@ -46,9 +46,6 @@ spec:
         resources:
           limits:
             cpu: 50m
-        env:
-        - name: "DOCKER_BRIDGE"
-          value: "cbr0"
         volumeMounts:
         - name: docker-sock
           mountPath: /var/run/docker.sock
