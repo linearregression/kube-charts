@@ -3,10 +3,9 @@ kind: Service
 metadata:
   name: pg-odoo
   labels:
-    name: pg-odoo
     heritage: helm
 spec:
   ports:
     - port: 5432
   selector:
-    name: pg-odoo
+    app: pg-odoo

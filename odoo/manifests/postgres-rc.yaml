@@ -3,16 +3,15 @@ kind: ReplicationController
 metadata:
   name: pg-odoo
   labels:
-    name: pg-odoo
     heritage: helm
 spec:
   replicas: 1
   selector:
-    name: pg-odoo
+    app: pg-odoo
   template:
     metadata:
       labels:
-        name: pg-odoo
+        app: pg-odoo
     spec:
       containers:
         - name: postgres
