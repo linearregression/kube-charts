@@ -3,10 +3,9 @@ kind: Service
 metadata:
   name: odoo
   labels:
-    name: odoo
     heritage: helm
 spec:
   ports:
     - port: 8069
   selector:
-    name: odoo
+    app: odoo

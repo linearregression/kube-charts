@@ -3,16 +3,15 @@ kind: ReplicationController
 metadata:
   name: odoo
   labels:
-    name: odoo
     heritage: helm
 spec:
   replicas: 1
   selector:
-    name: odoo
+    app: odoo
   template:
     metadata:
       labels:
-        name: odoo
+        app: odoo
     spec:
       containers:
         - name: odoo
@@ -29,11 +28,11 @@ spec:
           ports:
             - containerPort: 8069
               hostPort: 8069
-#          volumeMounts:
-#            - name: custom-addons
-#              mountPath: /mnt/extra-addons
-#            - name: var-lib-odoo
-#              mountPath: /var/lib/odoo
+          volumeMounts:
+            - name: custom-addons
+              mountPath: /mnt/extra-addons
+            - name: var-lib-odoo
+              mountPath: /var/lib/odoo
       volumes:
         - name: custom-addons
           hostPath:
