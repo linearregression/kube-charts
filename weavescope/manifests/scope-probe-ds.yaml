@@ -17,17 +17,14 @@ spec:
       hostNetwork: true
       containers:
       - name:  weave-scope-probe
-        image: weaveworks/scope:0.11.1
+        image: weaveworks/scope:0.13.1
         args:
         - --no-app
         # Remove argument below if you don't use a kubernetes-specific Docker bridge (cbr0)
         - --probe.docker.bridge=cbr0
         - --probe.docker=true
         - --probe.kubernetes=true
-        # Uncomment and customize argument below if your API service is not at http://localhost:8080
-        # Service accounts and service tokens are not supported yet (https://github.com/weaveworks/scope/issues/717)
-        # - --probe.kubernetes.api=http://yourapiserver:port
-
+        - --probe.weave.router.addr=
         # We cannot refer to the Scope App with its Kubernetes Service
         # DNS name (weave-scope-app) directly because Docker doesn't
         # allow customizing the DNS servers (the Kubernetes DNS add-on
@@ -49,9 +46,6 @@ spec:
         # - --probe.token=foo
         securityContext:
           privileged: true
-        resources:
-          limits:
-            cpu: 50m
         volumeMounts:
         - name: docker-sock
           mountPath: /var/run/docker.sock
